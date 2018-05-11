@@ -1,6 +1,14 @@
 const checkBalanced = (rootNode) => {
   /* Your code here */
+  
+  let stepsRight = -1;
+  let stepsLeft = 0;
 
+  rootNode.depthFirstForEach((value) => {
+     value >= rootNode.value ? stepsRight++ : stepsLeft++;
+  })
+
+  return stepsRight === stepsLeft;
 };
 
 class BinarySearchTree {
